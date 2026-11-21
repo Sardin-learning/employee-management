@@ -14,7 +14,7 @@ pipeline {
             }
         }
 
-        stage('Build images') {
+        stage('Build Docker images') {
             steps {
                 sh '''
                     docker build \
@@ -30,7 +30,7 @@ pipeline {
             }
         }
 
-        stage('Push images') {
+        stage('Push images to docker hub') {
             steps {
                 withDockerRegistry(
                     credentialsId: 'docker-token',
