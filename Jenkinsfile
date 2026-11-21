@@ -14,7 +14,7 @@ pipeline {
             }
         }
 
-        stage('Build Docker images') {
+        stage('Build images') {
             steps {
                 sh '''
                     docker build \

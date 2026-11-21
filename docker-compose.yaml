@@ -22,7 +22,7 @@ services:
   backend:
     build:
       context: ./backend
-      container name: "backend-container"
+      container name: "backend:v1"
     environment:
       FRONTEND_URL: ${FRONTEND_URL}
       PORT: "${BACKEND_CONTAINER_PORT}"
@@ -41,7 +41,7 @@ services:
   frontend:
     build:
       context: ./frontend
-      container name: "frontend-container"
+      container name: "frontend:v1"
     environment:
       API_PROXY_TARGET: "http://backend:${BACKEND_CONTAINER_PORT}"
     ports:
